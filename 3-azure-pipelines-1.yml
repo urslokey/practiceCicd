@@ -1,0 +1,19 @@
+trigger:
+- main
+
+stages:
+- stage: First
+  jobs: 
+  - job: FirstJob
+    steps:
+     - bash: echo FirstJob
+- stage: Second
+  jobs: 
+  - job: SecondJob
+    steps:
+     - bash: echo SecondJob
+- stage: Third
+  jobs: 
+  - job: ThirdJob
+    steps:
+     - bash: echo ThirdJob

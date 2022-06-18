@@ -14,7 +14,9 @@ stages:
     steps:
      - bash: echo SecondJob
 - stage: Third
+  variables: 
+   nodeEnv : developmwnt
   jobs: 
   - job: ThirdJob
     steps:
-     - bash: echo ThirdJob
+     - bash: echo $(nodeEnv)

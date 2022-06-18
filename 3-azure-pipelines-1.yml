@@ -8,15 +8,16 @@ stages:
     steps:
      - bash: echo FirstJob
      - bash: echo $(testing)
-- stage: Second
-  jobs: 
-  - job: SecondJob
-    steps:
-     - bash: echo SecondJob
-- stage: Third
-  variables: 
-   nodeEnv : developmwnt
-  jobs: 
-  - job: ThirdJob
-    steps:
-     - bash: echo $(nodeEnv)
+     - bash: echo $(Build.BuildNumber)
+# - stage: Second
+#   jobs: 
+#   - job: SecondJob
+#     steps:
+#      - bash: echo SecondJob
+# - stage: Third
+#   variables: 
+#    nodeEnv : developmwnt
+#   jobs: 
+#   - job: ThirdJob
+#     steps:
+#      - bash: echo $(nodeEnv)

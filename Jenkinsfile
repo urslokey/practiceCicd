@@ -1,12 +1,22 @@
+pipeline {
+	agent any
+	stages{
+		stage('Build'){
+			steps{
+				echo "Build"
+			}
+		}
+		stage("Test"){
+			steps{
+				echo "Test"
+			}
+		}
+		stage("Release"){
+			steps{
+				echo "Release"
+			}
+		}
+	}
 
-node {
-	stage('Build') {
-		echo "Build"
-	}
-	stage('Test') {
-		echo "Test"
-	}
-	stage('System Testing') {
-		echo "System Testing"
-	}
+
 }

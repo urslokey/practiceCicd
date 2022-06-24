@@ -1,34 +1,27 @@
 pipeline {
-	//agent any
-	agent { docker { image "node:16.15.1-alpine" } }
-	stages{
-		stage('Build'){
-			steps{
-				sh "node -v"
-				echo "Build"
-			}
+	agent { docker { image "node:16.15.1-alpine" }}
+	stages {
+		stage("Build"){
+			sh "node -v"
+			echo "Build"
 		}
-		stage("Test"){
-			steps{
-				echo "Test"
-			}
+
+		stage("Testing"){
+			echo "Testing"
 		}
-		stage("Release"){
-			steps{
-				echo "Release"
-			}
+
+		stage("Testing"){
+			echo "Testing"
 		}
 	}
 
-	post {
-		always {
-			echo "Running always"
-		}
-		success {
-			echo "Success"
+
+	post{
+		success{
+			echo "Success";
 		}
 		failure{
-			echo "Failure"
+				echo "failure";
 		}
 	}
 

@@ -1,10 +1,21 @@
 pipeline {
-	agent { docker { image "node:16.15.1-alpine" }}
+	//agent { docker { image "node:16.15.1-alpine" }}
+	agent any
+
+	environment{
+		dockerHome = tool "myDocker"
+		mevenHome = tool "mymaven"
+		PATH = "$dockerHome/bin:$mevenHome/bin:$PATH"
+	}
+
 	stages {
 		stage("Build"){
 			steps{
-				sh "node -v"
-				echo "Build"
+				sh "docker -v"
+				sh "mvn --version"
+				echo "$dockerHome"
+				echo "$mevenHome"
+				echo "$PATH"
 			}
 		}
 

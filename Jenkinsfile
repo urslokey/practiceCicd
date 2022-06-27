@@ -22,12 +22,6 @@ pipeline {
 				sh "npm test"
 			}
 		}
-
-		stage("Release"){
-			steps{
-				sh "npm start"
-			}
-		}
 	}
 
 

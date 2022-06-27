@@ -6,6 +6,7 @@ pipeline {
 		dockerHome = tool "myDocker"
 		mevenHome = tool "myMaven"
 		PATH = "$dockerHome/bin:$mevenHome/bin:$PATH"
+		echo "$dockerHome"
 	}
 
 	stages {
@@ -13,9 +14,6 @@ pipeline {
 			steps{
 				sh "docker -v"
 				sh "mvn --version"
-				echo "${dockerHome}"
-				echo "${mevenHome}"
-				echo "${PATH}"
 			}
 		}
 

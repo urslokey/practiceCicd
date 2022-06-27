@@ -6,7 +6,6 @@ pipeline {
 		dockerHome = tool "myDocker"
 		mevenHome = tool "myMaven"
 		PATH = "$dockerHome/bin:$mevenHome/bin:$PATH"
-		echo "$dockerHome"
 	}
 
 	stages {

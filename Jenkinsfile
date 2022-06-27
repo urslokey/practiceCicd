@@ -13,9 +13,9 @@ pipeline {
 			steps{
 				sh "docker -v"
 				sh "mvn --version"
-				echo "$dockerHome"
-				echo "$mevenHome"
-				echo "$PATH"
+				sh "$dockerHome"
+				sh "$mevenHome"
+				sh "$PATH"
 			}
 		}
 

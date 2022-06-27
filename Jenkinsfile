@@ -19,13 +19,13 @@ pipeline {
 
 		stage("Testing"){
 			steps{
-				echo "npm test"
+				sh "npm test"
 			}
 		}
 
 		stage("Release"){
 			steps{
-				echo "npm start"
+				sh "npm start"
 			}
 		}
 	}

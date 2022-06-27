@@ -10,22 +10,22 @@ pipeline {
 	}
 
 	stages {
+		
 		stage("Build"){
 			steps{
-				sh "docker -v"
-				sh "node --version"
+				sh "npm install"
 			}
 		}
 
 		stage("Testing"){
 			steps{
-				echo "Testing"
+				echo "npm test"
 			}
 		}
 
 		stage("Release"){
 			steps{
-				echo "Release"
+				echo "npm start"
 			}
 		}
 	}
